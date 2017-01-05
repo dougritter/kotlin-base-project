@@ -19,11 +19,6 @@ android {
         testApplicationId globalConfiguration["testApplicationId"]
     }
 
-    /*compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }*/
-
     packagingOptions {
         exclude 'LICENSE.txt'
         exclude 'META-INF/DEPENDENCIES'
@@ -57,16 +52,15 @@ android {
 dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
     def presentationTestDependencies = rootProject.ext.presentationTestDependencies
-    def dataDependencies = rootProject.ext.dataDependencies
-    def testDependencies = rootProject.ext.dataTestDependencies
     def developmentDependencies = rootProject.ext.developmentDependencies
+
+    compile project(':domain')
+    compile project(':data')
 
     kapt presentationDependencies.daggerCompiler
     compile presentationDependencies.appCompat
     compile presentationDependencies.kotlin
     compile presentationDependencies.dagger
-    compile dataDependencies.okHttp
-    compile dataDependencies.gson
     compile presentationDependencies.butterKnife
     compile presentationDependencies.recyclerView
     compile presentationDependencies.rxJava
@@ -80,12 +74,8 @@ dependencies {
     androidTestCompile presentationTestDependencies.espresso
     androidTestCompile presentationTestDependencies.testingSupportLib
 
-    testCompile testDependencies.junit
-    testCompile testDependencies.assertj
-    testCompile testDependencies.mockito
-    testCompile testDependencies.robolectric
-
     //Development
     compile developmentDependencies.leakCanary
+
 }
 
