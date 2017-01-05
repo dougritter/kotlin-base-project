@@ -26,6 +26,7 @@ dependencies {
 
     provided domainDependencies.javaxAnnotation
 
+    compile domainDependencies.kotlin
     compile domainDependencies.javaxInject
     compile domainDependencies.rxJava
 
