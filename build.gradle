@@ -1,11 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'buildsystem/dependencies.gradle'
 
 buildscript {
+    ext.kotlin_version = '1.0.6'
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.0-beta1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -16,6 +19,21 @@ allprojects {
     repositories {
         jcenter()
     }
+    ext {
+        androidApplicationId = 'com.dougritter.baseproject'
+        androidVersionCode = 1
+        androidVersionName = "1.0"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        testApplicationId = 'com.dougritter.baseproject.test'
+    }
+}
+
+task runUnitTests(dependsOn: [':app:cleanTestDebugUnitTest', ':app:testDebugUnitTest']) {
+    description 'Run application unit tests.'
+}
+
+task runAcceptanceTests(dependsOn: [':app:connectedAndroidTest']) {
+    description 'Run application acceptance tests.'
 }
 
 task clean(type: Delete) {
