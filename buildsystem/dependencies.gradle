@@ -47,6 +47,7 @@ ext {
             rxAndroid      : "io.reactivex:rxandroid:${rxAndroidVersion}",
             javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             kotlin         : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
+            kotlinReflect  : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
     ]
 
     presentationTestDependencies = [
@@ -63,6 +64,7 @@ ext {
             javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
             rxJava         : "io.reactivex:rxjava:${rxJavaVersion}",
             kotlin         : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
+            kotlinReflect  : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
     ]
 
     domainTestDependencies = [
@@ -81,6 +83,7 @@ ext {
             javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
             kotlin            : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
+            kotlinReflect     : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
     ]
 
     dataTestDependencies = [

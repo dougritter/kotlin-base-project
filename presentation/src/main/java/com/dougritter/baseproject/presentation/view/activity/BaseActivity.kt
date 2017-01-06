@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity
 import com.dougritter.baseproject.presentation.AndroidApplication
 import com.dougritter.baseproject.presentation.internal.di.components.ApplicationComponent
 import com.dougritter.baseproject.presentation.internal.di.modules.ActivityModule
+import com.dougritter.baseproject.presentation.navigation.Navigator
+import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    //  @Inject Navigator navigator;
+    @Inject lateinit var navigator : Navigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

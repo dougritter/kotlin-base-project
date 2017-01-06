@@ -59,6 +59,7 @@ dependencies {
     kapt presentationDependencies.daggerCompiler
     compile presentationDependencies.appCompat
     compile presentationDependencies.kotlin
+    compile presentationDependencies.kotlinReflect
     compile presentationDependencies.dagger
     compile presentationDependencies.butterKnife
     compile presentationDependencies.recyclerView
@@ -74,5 +75,9 @@ dependencies {
     androidTestCompile presentationTestDependencies.testingSupportLib
     testCompile presentationTestDependencies.junit
 
+}
+
+kapt {
+    generateStubs = true
 }
 
