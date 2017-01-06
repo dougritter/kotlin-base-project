@@ -1,13 +1,13 @@
-package com.dougritter.baseproject.presentation
+package com.dougritter.baseproject.presentation.view.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.dougritter.baseproject.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
 }
