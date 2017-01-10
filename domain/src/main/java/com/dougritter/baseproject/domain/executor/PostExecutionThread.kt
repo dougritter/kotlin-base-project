@@ -15,7 +15,8 @@
  */
 package com.dougritter.baseproject.domain.executor
 
-import rx.Scheduler
+import io.reactivex.Scheduler
+
 
 interface PostExecutionThread {
     val scheduler: Scheduler
